@@ -5,7 +5,7 @@ ENV TARGET=linux ARCH=amd64
 RUN make build
 
 FROM alpine:3.8 as resource
-COPY --from=builder /go/src/github.com/lfurrea/lolcat/lolcat /usr/local/bin
+COPY --from=builder /go/src/github.com/lfurrea/build/lolcat /usr/local/bin
 RUN apk add --update --no-cache \
     git \
     openssh \
