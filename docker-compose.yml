@@ -3,5 +3,5 @@ services:
   db:
     image: bash:latest
     volumes:
-      - '${{CF_VOLUME_NAME}}:${{CF_VOLUME_PATH}}'
-    command: ls -a  l
+      - '${{CF_VOLUME_NAME}}:/mnt'
+    command: ls -al /mnt
