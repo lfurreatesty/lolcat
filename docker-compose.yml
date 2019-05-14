@@ -1,7 +1,7 @@
 version: '2'
-  services:
-    db:
-      image: bash:latest
-      volumes:
-        - '${{CF_VOLUME_NAME}}:${{CF_VOLUME_PATH}}'
-      command: ls -a  l
+services:
+  db:
+    image: bash:latest
+    volumes:
+      - '${{CF_VOLUME_NAME}}:${{CF_VOLUME_PATH}}'
+    command: ls -a  l
