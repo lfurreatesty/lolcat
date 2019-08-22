@@ -1,0 +1,58 @@
+version: "1.0"
+stages:
+  - "clone"
+  - "build"
+  - "integration"
+  - "push"
+steps:
+  main_clone:
+    type: "git-clone"
+    description: "Cloning main repository..."
+    repo: "lfurreatesty/lolcat"
+    revision: "${{CF_BRANCH}}"
+    git: github
+    stage: "clone"
+
+  freestyle-step-1:
+    description: Freestyle step..
+    title: Free styling
+    image: alpine:latest
+    commands:
+      - cf_export VAR1=latest VAR2=test
+  freestyle-step-2:
+    description: Freestyle step..
+    title: Free styling 2
+    image: alpine:latest
+    commands:
+      - printenv
+      - echo $VAR1
+      - echo $VAR2
+  build:
+    title: "Building Docker Image"
+    no_cache: true
+    type: "build"
+    image_name: "lfurreatesty/lolcat"
+    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    dockerfile: "Dockerfile"
+    stage: "build"
+    build_arguments:
+      - pull
+      - disable-content-trust=true
+    when:
+      condition:
+        any:
+          myCondition: steps.main_clone.result == 'success'
+  push:
+    title: "Pushing image to cfcr"
+    stage: "push"
+    type: "push"
+    image_name: "lfurreatesty/lolcat"
+    registry: "cfcr"
+    candidate: "${{build}}"
+    tags:
+      - "${{CF_BRANCH_TAG_NORMALIZED}}"
+      - "${{CF_REVISION}}"
+    when:
+      condition:
+        any:
+          myCondition: steps.build.result == 'success'
