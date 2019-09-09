@@ -27,7 +27,7 @@ steps:
       - printenv
       - echo $VAR1
       - echo $VAR2
-      - echo "Key is ${KEY}"
+      - echo "Key is ${{KEY}}"
   build:
     title: "Building Docker Image"
     no_cache: true
