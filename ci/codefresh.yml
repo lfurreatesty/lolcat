@@ -27,6 +27,7 @@ steps:
       - printenv
       - echo $VAR1
       - echo $VAR2
+      - echo "Hola"
       - echo $KEY
   build:
     title: "Building Docker Image"
