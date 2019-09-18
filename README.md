@@ -1,4 +1,4 @@
-[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/luiscodefresh/lolcat-gh%2FCopy%20of%20Release?key=eyJhbGciOiJIUzI1NiJ9.NWM2ZDhiY2MzNzAzMzI2ZDZkNGFkMzFh.2DmBnN54jVYUEjJZubCas1WeTz-GmI4PALEY2dO7bkA&type=cf-1)]( https://g.codefresh.io/pipelines/Copy of Release/builds?filter=trigger:build~Build;pipeline:5d55f83cfc48150a8307e7c0~Copy of Release)
+[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/luiscodefresh/lolcat-gh%2Fcf_export?key=eyJhbGciOiJIUzI1NiJ9.NWM2ZDhiY2MzNzAzMzI2ZDZkNGFkMzFh.2DmBnN54jVYUEjJZubCas1WeTz-GmI4PALEY2dO7bkA&type=cf-1)]( https://g.codefresh.io/pipelines/cf_export/builds?filter=trigger:build~Build;pipeline:5d572afe9b84f665d5722616~cf_export)
 
 **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
 
