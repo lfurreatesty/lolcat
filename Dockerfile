@@ -8,6 +8,7 @@ FROM alpine:3.8 as resource
 COPY --from=builder /go/src/github.com/lfurrea/lolcat/build/lolcat /usr/local/bin
 RUN apk add --update --no-cache \
     git \
+    bash \
     openssh \
     jq \
     && chmod +x /usr/local/bin/*
